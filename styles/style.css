@@ -149,6 +149,45 @@
   height: auto;
 }
 
+.dialog_button {
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  block-size: 191px;
+  margin-block-start: 237px;
+  opacity: 30%;
+}
+
+.dialog_button[open] .dialog_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  line-height: 150%;
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  text-transform: uppercase;
+  padding-block-start: 13px;
+  padding-block-end: 19px;
+}
+
+.dialog_button::backdrop {
+  background-color: rgb(0 0 0 / 0.75);;
+}
+
+.dialog_icon {
+  flex-basis: 39px;
+}
+
+.daialog_close {
+  text-transform: uppercase;
+  border: 2px solid #000000;
+  background-color: transparent;
+  padding: 12.5px 114.5px;
+  max-height: 38px;
+}
+
+@media (width <= 375px) {
+  
+}
+
 @media (width >= 1024px) {
 
   .save_button {
