@@ -37,10 +37,12 @@
 .header__title {
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-variation-settings: var(--card-text-weight);
 }
 
 .header__subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-variation-settings: var(--card-text-weight);
 }
 
 .main_content {
@@ -107,6 +109,7 @@
 .card_label {
   font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  font-variation-settings: var(--card-text-weight);
   text-transform: uppercase;
   line-height: 100%;
   mix-blend-mode: hard-light;
@@ -136,6 +139,7 @@
   padding: 25px 27px ;
   line-height: 21px;
   font-weight: 400;
+  font-variation-settings: var(--card-text-weight);
 }
 
 
@@ -183,6 +187,7 @@
   color: var(--main-color);
   font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+  font-variation-settings: var(--card-text-weight);
   mix-blend-mode: difference;
 }
 
