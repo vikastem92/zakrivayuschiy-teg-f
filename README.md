@@ -1,1 +1,1 @@
-https://vikastem92.github.io/zakrivayuschiy-teg-f/
+https://github.com/vikastem92/zakrivayuschiy-teg-f.git
