@@ -137,7 +137,7 @@
   flex-direction: column;
   gap: 27px;
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-  padding: 25px 27px ;
+  padding: 25px 27px;
   line-height: 21px;
   font-variation-settings: var(--card-text-weight);
   border-top: 2px solid var(--second-color);
@@ -259,7 +259,6 @@
 .dialog_button {
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   max-inline-size: 353px;
-  opacity: 30%;
 }
 
 .dialog_button[open] .dialog_header {
