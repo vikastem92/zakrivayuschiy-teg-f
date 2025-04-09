@@ -28,7 +28,7 @@
   border: 2px solid var(--second-color);
   align-items: center;
   background-color: var(--main-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   padding-block-start: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   padding-block-end: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   justify-content: center;
@@ -37,17 +37,16 @@
 .header__title {
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  font-variation-settings: var(--card-text-weight);
 }
 
 .header__subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  font-variation-settings: var(--card-text-weight);
+  text-transform: uppercase;
 }
 
 .main_content {
   display: grid;
-  gap: 49px;
+  gap: 50px;
   max-width: 700px;
   margin: 0 auto;
   justify-content: center;
@@ -61,13 +60,13 @@
 }
 
 .card_title {
-  font-family: var(--main-font);
-  font-weight: var(--card-title-weight);
+  font-family: var(--main-font), sans-serif;
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
   font-variation-settings: var(--card-title-weight);
   letter-spacing: 0.1px;
   line-height: 1.21;
   padding: 4px 10px 6px 10px;
+  border-bottom: 2px solid var(--second-color);
 }
 
 .card_image {
@@ -75,6 +74,7 @@
 }
 
 .image_truck {
+  display: block;
   width: 100%;
 }
 
@@ -107,9 +107,8 @@
 }
 
 .card_label {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
-  font-variation-settings: var(--card-text-weight);
   text-transform: uppercase;
   line-height: 100%;
   mix-blend-mode: hard-light;
@@ -125,9 +124,11 @@
   0 -1px var(--main-color);
 }
 
-@supports ((-webkit-text-stroke: 1px var(--main-color)) or (-text-stroke: 1px var(--main-color))) {
+@supports ((-webkit-text-stroke: 1px var(--main-color)) or (text-stroke: 1px var(--main-color))) {
   .card_label {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--main-color);
+    text-stroke: 1px var(--main-color); 
   }
 }
 
@@ -138,8 +139,8 @@
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
   padding: 25px 27px ;
   line-height: 21px;
-  font-weight: 400;
   font-variation-settings: var(--card-text-weight);
+  border-top: 2px solid var(--second-color);
 }
 
 
@@ -152,11 +153,16 @@
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-height: 38px;
+  max-width: 42px;
   background-color: transparent;
   border: 2px solid transparent;
   cursor: pointer;
   transition: border 0.3s ease;
+  padding: 0;
 }
 
 .card__icon-button:focus {
@@ -185,9 +191,8 @@
   position: relative;
   z-index: 1;
   color: var(--main-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
-  font-variation-settings: var(--card-text-weight);
   mix-blend-mode: difference;
 }
 
@@ -202,17 +207,18 @@
   background-color: var(--main-color);
 }
 
-.button_effects::before {
+.button_effects::before, .save_button::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: var(--second-color);
   transform-origin: left center;
-  transform: scaleX(0) translateX(-100%);
   transition: transform 0.5s ease-in-out;
+}
+
+.button_effects::before {
+  transform-origin: left center;
+  transform: scaleX(0) translateX(-100%);
 }
 
 .button_effects:hover::before {
@@ -230,18 +236,13 @@
   border: 2px solid var(--second-color);
   background-color: var(--main-color);
   min-height: 80px;
-  margin: 4px 35px 100px;
+  margin: 0px 35px 100px;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .save_button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--second-color);
   transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
 }
 
 .save_button:hover::before {
@@ -257,9 +258,8 @@
 
 .dialog_button {
   inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  block-size: 191px;
-  margin-block-start: 237px;
   max-inline-size: 353px;
+  opacity: 30%;
 }
 
 .dialog_button[open] .dialog_header {
@@ -295,11 +295,11 @@
   grid-row: 2;
   justify-self: center;
   text-transform: uppercase;
-  border: 2px solid var(--main-color);
   background-color: transparent;
   padding: 12.5px 114.5px;
   max-height: 38px;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .daialog_close:focus-visible {
@@ -334,6 +334,14 @@
 
   .button {
     padding-block-end: 22px;
+  }
+
+  .dialog_button[open] .dialog_header {
+    padding: 12px 17px;
+  }
+
+  .daialog_close {
+    padding: 11px 132px;
   }
 
 }

@@ -245,23 +245,25 @@
           <span class="button__text">Сохранить на память</span>
         </button>
         <dialog class="dialog_button" id="dialog-id">
-          <div class="dialog_header">
-            <svg 
-              class="dialog_icon"
-              width="39"
-              height="39"
-              viewBox="0 0 39 39"
-              xmlns="http://www.w3.org/2000/svg"
-              >
-                <use href="./svg/floppy.svg#floppy"></use>
-            </svg>
-            <h2 class="button__text modal__subtitle">Вставьте дискету, чтобы продолжить</h2>
-            <button class="daialog_close button__text"
-              type="button"
-              onclick="window['dialog-id'].close();">
-              ok
-            </button>
-          </div>
+          <form  method="dialog">
+            <div class="dialog_header">
+              <svg 
+                class="dialog_icon"
+                width="39"
+                height="39"
+                viewBox="0 0 39 39"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                  <use href="./svg/floppy.svg#floppy"></use>
+              </svg>
+              <h2 class="button__text modal__subtitle">Вставьте дискету, чтобы продолжить</h2>
+              <button class="daialog_close button_effects"
+                type="submit"
+                onclick="window['dialog-id'].close();">
+                <span class="button__text">ok</span>
+              </button>
+            </div>
+          </form>
         </dialog>
       </section>
     </main>

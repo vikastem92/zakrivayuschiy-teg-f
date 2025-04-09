@@ -2,8 +2,8 @@
 :root {
     --main-font: "Inter";
     --accent-font: "Press Start 2P";
-    --card-text-weight: 400;
-    --card-title-weight: 700;
+    --card-text-weight: "wght" 400;
+    --card-title-weight: "wght" 700;
     --main-color: #fff;
     --second-color: #000000;
     --bg-img-gradient: 

@@ -73,8 +73,9 @@
     animation: sparks 0.3s ease-in 0.3s 1 alternate;
   }
 
-  .like-icon.is-liked .heart {
+  .like-icon.is-liked {
     animation: heart 0.3s ease-in 0.1s 1 alternate;
+    transform-origin: center;
   }
 
 
